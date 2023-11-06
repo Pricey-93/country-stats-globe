@@ -12,7 +12,7 @@ import CountryDetails from './pages/countryDetails/CountryDetails';
 
 const router = createBrowserRouter([
   {
-    path: "/country-finder",
+    path: "country-finder/countries",
     element: <RootLayout />,
     // errorElement: <ErrorPage />,
     loader: rootLoader,
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "countries/:name", 
+        path: ":name", 
         element: <CountryDetails /> 
       }
     ]

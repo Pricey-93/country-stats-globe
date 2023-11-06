@@ -1,14 +1,14 @@
 import { useRef } from "react";
-// import { useFrame } from "@react-three/fiber";
-import { Vector3 } from "three";
+import { useNavigate } from "react-router-dom";
 import * as THREE from "three";
+import { ICountry } from "../../api/ICountry";
 
 function degToRad(deg: number) {
   return Math.PI * deg / 180;
 }
 
 function WGStoXYZ(latitude: number, longitude :number, R: number) {
-  const xyz = new Vector3(0, 0, 0);
+  const xyz = new THREE.Vector3(0, 0, 0);
 
   xyz["y"] = Math.sin(degToRad(latitude)) * R;
   const r = Math.cos(degToRad(latitude)) * R;
@@ -19,26 +19,21 @@ function WGStoXYZ(latitude: number, longitude :number, R: number) {
   return xyz;
 }
 
-interface IMarker {
-  color: string,
-  latitude: number,
-  longitude: number
+interface MarkerProps {
+  country: ICountry,
 }
-
-export default function Marker(props: IMarker) {
-  const { color, latitude, longitude } = props;
+export default function Marker(props: MarkerProps) {
+  const { country } = props;
   const markerRef = useRef<THREE.Mesh>(new THREE.Mesh());
-  const markerPos = WGStoXYZ(latitude, longitude, 1);
-
-  // useFrame(({ camera }) => {
-  //   // Make the marker face the camera (billboarding)
-  //   markerRef.current.lookAt(camera.position);
-  // });
+  const markerPos = WGStoXYZ(country.latlng[0], country.latlng[1], 1);
+  const navigate = useNavigate();
+  
+  function clickHandler(): void {navigate(`${country?.name.common.toLowerCase()}`)};
 
   return (
-    <mesh onClick={() => console.log("YOU CLICKED A COUNTRY")} ref={markerRef} position={markerPos}>
+    <mesh onClick={() => clickHandler()} ref={markerRef} position={markerPos}>
       <sphereGeometry args={[0.005, 32, 32]} />
-      <meshBasicMaterial color={color} />
+      <meshBasicMaterial color={"red"} />
     </mesh>
   );
 }

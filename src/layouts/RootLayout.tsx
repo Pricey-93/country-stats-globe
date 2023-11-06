@@ -14,12 +14,11 @@ export default function RootLayout() {
   return (
     <>
       <Header />
-      <main>
+      <main className="page-content-container">
         <Outlet context={ { countryManager } satisfies ContextType }/>
       </main>
     </>
   )
-
 }
 
 export async function loader(): Promise<ICountry[]> {

@@ -8,7 +8,7 @@ export default function BackButton(props: Iprops) {
   const navigate = useNavigate();
 
   function backButtonHandler() {
-    navigate("/country-finder");
+    navigate("/country-finder/countries");
   }
 
   return (

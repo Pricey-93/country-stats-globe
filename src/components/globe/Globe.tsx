@@ -23,7 +23,6 @@ export default function Globe() {
 
   return (
     <>
-    
      <mesh ref={cloudsRef}>
       <sphereGeometry args={[1.005, 32, 32]} />
       <meshPhongMaterial
@@ -50,9 +49,10 @@ export default function Globe() {
         enableRotate={true}
         zoomSpeed={0.6}
         panSpeed={0.5}
-        rotateSpeed={0.4} />
+        rotateSpeed={0.4}
+        minDistance={1.2}
+        maxDistance={2} />
       </mesh>
     </>
-   
   )
 }
