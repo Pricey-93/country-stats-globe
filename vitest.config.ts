@@ -7,6 +7,5 @@ export default defineConfig({
     coverage: {
       enabled: true,
     },
-    globals: true,
   },
 })
