@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test": "vitest --ui",
     "coverage": "vitest run --coverage",
-    "cypress": "npx cypress open"
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@react-three/drei": "^9.88.9",
