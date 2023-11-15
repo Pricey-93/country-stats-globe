@@ -12,7 +12,7 @@ import CountryDetails from './pages/countryDetails/CountryDetails';
 
 const router = createBrowserRouter([
   {
-    path: "country-finder/countries",
+    path: "country-stats-globe",
     element: <RootLayout />,
     // errorElement: <ErrorPage />,
     loader: rootLoader,
