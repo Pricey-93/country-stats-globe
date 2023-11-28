@@ -10,25 +10,6 @@ export default function Home() {
   const { countryManager } = useContext();
   const countries = countryManager.getCountries();
 
-  // const [filteredCountries, setFilteredCountries] = useState(countryManager.getCountries());
-
-  // function filterCountries(region: string): void {
-  //   if (region === "Filter by Region") {
-  //     setFilteredCountries(countries);
-  //   }
-  //   else {
-  //     const filtered = countries.filter(country => country.region === region);
-  //   setFilteredCountries(filtered);
-  //   }
-  // }
-
-  // function searchCountries(userInput: string): void {
-  //   const searchResult = countries?.filter(country => country.name.common.toUpperCase().includes(userInput.toUpperCase()));
-  //   if (searchResult?.length > 0) {
-  //     setFilteredCountries(searchResult);
-  //   }
-  // }
-
   return (
     <Canvas className="globe-canvas">
       <ambientLight intensity={1.5} />
@@ -41,7 +22,7 @@ export default function Home() {
       <Suspense fallback={null}>
         <Globe />
         {
-          countries.map((country, index) => <Marker country={country} key={index} />)
+          countries.map((country) => <Marker country={country} key={country.name.common} />)
         }
       </Suspense>
     </Canvas>
