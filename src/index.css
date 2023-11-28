@@ -10,29 +10,20 @@ html, body, #root {
 .page-content-container {
   height: 90%;
 }
-
 :root {
   font-family: 'Nunito Sans', sans-serif;
   --home-page-body-text-size: 14px;
   --details-page-body-text-size: 16px;
 
-  --text: hsl(200, 15%, 8%);
-  --input: hsl(0, 0%, 52%);
-  --background: hsl(0, 0%, 98%);
-  --elements: hsl(0, 0%, 100%);
-  --box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 5px 0px;
-}
-
-[data-theme="dark"] {
   --text: hsl(0, 0%, 100%);
+  --input: hsl(0, 0%, 52%);
   --background: hsl(0, 0%, 2%);
   --elements: hsl(209, 23%, 22%);
+  --box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 5px 0px;
 }
-
 body {
   background-color: var(--background);
 }
-
 .header-container {
   max-height: 10%;
   padding: 2rem;
