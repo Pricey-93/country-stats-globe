@@ -44,7 +44,9 @@ export default function CountryDetails() {
     <>
       <BackButton value="back" />
         <div className="country-details-wrapper">
-          <img src={ activeCountry?.flags.png } alt={ activeCountry?.flags.alt } />
+          <figure>
+            <img src={ activeCountry?.flags.png } alt={ activeCountry?.flags.alt } />
+          </figure>
           <div className="country-details-container">
             <h2 className="country-title"> { activeCountry?.name.common } </h2>
             <div className="country-details-lists-wrapper">

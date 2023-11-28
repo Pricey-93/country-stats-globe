@@ -13,7 +13,7 @@ export default function BackButton(props: Iprops) {
 
   return (
     <button className="back-button" onClick={ () => backButtonHandler() }>
-      <i className="fa-solid fa-arrow-left"></i>{ value }
+      <i className="fa-solid fa-arrow-left"></i> { value }
     </button>
   )
 }
